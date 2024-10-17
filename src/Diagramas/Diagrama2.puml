@@ -1,0 +1,36 @@
+@startuml
+
+class Admin {
+    + gestionarUsuarios()
+    + gestionarProductos()
+}
+
+class Cliente {
+    + realizarCompra()
+    + consultarFactura()
+}
+
+class Proveedor {
+    + gestionarProveedor()
+}
+
+class Producto {
+    + agregarProducto()
+    + eliminarProducto()
+}
+
+class FacturaCliente {
+    + generarFactura()
+}
+
+class Facturacion {
+    + procesarFacturaCliente()
+    + procesarFacturaProveedor()
+}
+
+FacturaCliente --> Facturacion : "procesa"
+FacturaCliente --> Producto : "incluye"
+FacturaCliente --> Cliente : "generada para"
+Producto --> Proveedor : "suministrado por"
+
+@enduml

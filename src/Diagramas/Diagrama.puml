@@ -1,0 +1,27 @@
+@startuml
+
+actor "Usuario" as Usuario
+actor "Cliente" as Cliente
+actor "Proveedor" as Proveedor
+actor "Admin" as Admin
+
+usecase "Iniciar Sesión" as UC1
+usecase "Consultar Productos" as UC2
+usecase "Realizar Compra" as UC3
+usecase "Generar Factura" as UC4
+usecase "Gestionar Proveedor" as UC5
+usecase "Gestionar Productos" as UC6
+usecase "Gestionar Usuarios" as UC7
+usecase "Consultar Facturas" as UC8
+
+Usuario -- UC1
+Cliente -- UC2
+Cliente -- UC3
+Cliente -- UC4
+Cliente -- UC8
+Proveedor -- UC5
+Admin -- UC6
+Admin -- UC7
+Admin -- UC1
+
+@enduml
