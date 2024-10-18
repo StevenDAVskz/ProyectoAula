@@ -2,24 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Facturacion.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Comand/CreateClienteCommand.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/CommandHandler/ClienteCommandHandler.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Comand/GetClienteQuery.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/CommandHandler/ClienteRepository.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Comand/UpdateClienteCommand.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/FerreFactura.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/FerreGui/Ventanaregistro.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Provedor.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Trabajadores.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Clientes.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Admin.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/FacturaCliente.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/FacturaProvedor.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Usuarios.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/FerreGui/Ventanalogin.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/NetBeansProjects/FerreFactura/src/ferrefactura/Clases/Productos.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

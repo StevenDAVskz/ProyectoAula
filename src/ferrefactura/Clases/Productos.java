@@ -9,6 +9,8 @@ package ferrefactura.Clases;
  * @author steve
  */
 public class Productos {
+    protected String nombre;
+    protected int id;
     protected int CantidadVentas;
     protected String Descripcion;
     protected int Precio;
@@ -18,12 +20,32 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(int CantidadVentas, String Descripcion, int Precio, String Calidad, int CantidadAlmacen) {
+    public Productos(String nombre, int id, int CantidadVentas, String Descripcion, int Precio, String Calidad, int CantidadAlmacen) {
+        this.nombre = nombre;
+        this.id = id;
         this.CantidadVentas = CantidadVentas;
         this.Descripcion = Descripcion;
         this.Precio = Precio;
         this.Calidad = Calidad;
         this.CantidadAlmacen = CantidadAlmacen;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCantidadVentas() {
