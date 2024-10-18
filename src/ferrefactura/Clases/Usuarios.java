@@ -4,6 +4,7 @@
  */
 package ferrefactura.Clases;
 
+
 /**
  *
  * @author steve
@@ -76,5 +77,7 @@ public class Usuarios {
     public void setContraseña(String Contraseña) {
         this.Contraseña = Contraseña;
     }
+    
+   
     
 }
