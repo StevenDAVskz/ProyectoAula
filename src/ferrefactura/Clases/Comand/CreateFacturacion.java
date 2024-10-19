@@ -16,6 +16,7 @@ public class CreateFacturacion {
     private Usuarios user;
     private Productos productos;
     private Trabajadores trabajador;
+    private int idfactura; 
 
     public CreateFacturacion(Usuarios user, Productos productos, Trabajadores trabajador) {
         this.user = user;
@@ -34,4 +35,9 @@ public class CreateFacturacion {
     public Trabajadores getTrabajador() {
         return trabajador;
     }
+
+    public int getIdfactura() {
+        return idfactura;
+    }
+    
 }
