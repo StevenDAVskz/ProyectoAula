@@ -11,6 +11,7 @@ import java.util.Date;
  * @author steve
  */
 public class Facturacion {
+    private int idfactura; 
     private Usuarios user;
     private Productos productos;
     private Trabajadores trabajador;
@@ -18,10 +19,11 @@ public class Facturacion {
     public Facturacion() {
     }
 
-    public Facturacion(Usuarios user, Productos productos, Trabajadores trabajador) {
+    public Facturacion(Usuarios user, Productos productos, Trabajadores trabajador, int idfactura) {
         this.user = user;
         this.productos = productos;
         this.trabajador = trabajador;
+        this.idfactura=idfactura;
     }
 
     public Usuarios getUser() {
@@ -47,5 +49,12 @@ public class Facturacion {
     public void setTrabajador(Trabajadores trabajador) {
         this.trabajador = trabajador;
     }
-    
+
+    public int getIdfactura() {
+        return idfactura;
+    }
+
+    public void setIdfactura(int idfactura) {
+        this.idfactura = idfactura;
+    }
 }

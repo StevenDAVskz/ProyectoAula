@@ -18,8 +18,8 @@ public class FacturaCliente extends Facturacion{
     public FacturaCliente() {
     }
 
-    public FacturaCliente(Clientes nombreClientes, int CostoFinal, Date FechaCompra, Usuarios user, Productos productos, Trabajadores trabajador) {
-        super(user, productos, trabajador);
+    public FacturaCliente(Clientes nombreClientes, int idfactura, int CostoFinal, Date FechaCompra, Usuarios user, Productos productos, Trabajadores trabajador) {
+        super(user, productos, trabajador, idfactura);
         this.nombreClientes = nombreClientes;
         this.CostoFinal = CostoFinal;
         this.FechaCompra = FechaCompra;
