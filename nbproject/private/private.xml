@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USUARIO/Downloads/ProyectoAula-main%20(3)/ProyectoAula-main/src/FerreGui/Registro.java</file>
-            <file>file:/C:/Users/USUARIO/Downloads/ProyectoAula-main%20(3)/ProyectoAula-main/src/FerreGui/FacturasAdmin.java</file>
-            <file>file:/C:/Users/USUARIO/Downloads/ProyectoAula-main%20(3)/ProyectoAula-main/src/ferrefactura/Clases/Comand/CreateClienteCommand.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/Clases/CommandHandler/FacturacionRepository.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ClienteCommandHandler.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/Diagramas/Diagrama2.puml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/negocios/acciones/commands/CreateClienteCommand.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/Diagramas/Diagrama.puml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/FerreGui/Clientes.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/FerreFactura.java</file>
         </group>
     </open-files>
 </project-private>

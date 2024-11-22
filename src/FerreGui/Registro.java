@@ -4,7 +4,6 @@
  */
 package FerreGui;
 
-import ferrefactura.Clases.ComandUser.UserCreate;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -174,22 +173,18 @@ public class Registro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          // Obtener los datos ingresados por el usuario
-         
-
-
-        UserCreate create;
-        create = new UserCreate() {
-            @Override
-            public void CreateUser() {
-                String nombre = Nombre.getText();
+         String nombre = Nombre.getText();
          int id;
          String direccion = Direccion.getText();
          String email = Email.getText();
          int numero;
          String contraseña = new String(Contraseña.getPassword());
          String rol = (String) Rol.getSelectedItem();
-                
-                 if (nombre.trim().isEmpty() || ID.getText().trim().isEmpty() ||  direccion.trim().isEmpty() ||  email.trim().isEmpty() || 
+
+
+
+         // Validación inicial de los campos vacíos
+         if (nombre.trim().isEmpty() || ID.getText().trim().isEmpty() ||  direccion.trim().isEmpty() ||  email.trim().isEmpty() || 
              new String(Contraseña.getPassword()).trim().isEmpty() || Rol.getSelectedItem()== null) { 
         
              JOptionPane.showMessageDialog(rootPane, "Debes llenar todos los campos, son obligatorios.");
@@ -213,7 +208,7 @@ public class Registro extends javax.swing.JFrame {
 
     try {
         // Configuración de conexión a la base de datos
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/registro", "root", "");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ferrefactura", "root", "");
 
         // Verificar si el ID ya existe en la base de datos
         String checkQuery = "SELECT COUNT(*) FROM usuarios WHERE id = ?";
@@ -253,11 +248,6 @@ public class Registro extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         limpiar();
     }
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-        };
-         // Validación inicial de los campos vacíos
-        
         
         
         
