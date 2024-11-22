@@ -3,19 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/FerreGui/Clientes.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/FacturaProvedor.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/FerreGui/Registro.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/FacturaCliente.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/Usuarios.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/FerreGui/FacturasAdmin.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/FerreGui/Proveedor.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/CommandHandler/FacturacionCommandHandler.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/Facturacion.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/Comand/UpdateClienteCommand.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/FerreGui/Ventanalogin.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/Productos.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Documentos/ProyectoA/ProyectoAula/src/ferrefactura/Clases/Comand/UpdateFacturacion.java</file>
+            <file>file:/C:/Users/USUARIO/Downloads/ProyectoAula-main%20(3)/ProyectoAula-main/src/FerreGui/Registro.java</file>
+            <file>file:/C:/Users/USUARIO/Downloads/ProyectoAula-main%20(3)/ProyectoAula-main/src/FerreGui/FacturasAdmin.java</file>
+            <file>file:/C:/Users/USUARIO/Downloads/ProyectoAula-main%20(3)/ProyectoAula-main/src/ferrefactura/Clases/Comand/CreateClienteCommand.java</file>
         </group>
     </open-files>
 </project-private>
