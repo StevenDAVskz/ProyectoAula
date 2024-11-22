@@ -5,7 +5,12 @@
 package FerreGui;
 
 import javax.swing.JOptionPane;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.util.Set;
 /**
  *
  * @author steve
@@ -39,7 +44,6 @@ public class Registro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        Contraseña = new javax.swing.JTextField();
         Nombre = new javax.swing.JTextField();
         ID = new javax.swing.JTextField();
         Direccion = new javax.swing.JTextField();
@@ -50,6 +54,7 @@ public class Registro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        Contraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,7 +90,6 @@ public class Registro extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Número");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 70, 30));
-        jPanel2.add(Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 160, 30));
 
         Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +133,7 @@ public class Registro extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 70, 70));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 370, 70));
+        jPanel2.add(Contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 332, 160, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,13 +172,82 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nombre = Nombre.getText();
-        int id = Integer.parseInt(ID.getText());
-        String direccion = Direccion.getText();
-        String email = Email.getText();
-        int numero = Integer.parseInt(Email.getText());
-        String contraseña = Contraseña.getText();
-        String rol = Rol.getActionCommand();
+         // Obtener los datos ingresados por el usuario
+         String nombre = Nombre.getText();
+         int id;
+         String direccion = Direccion.getText();
+         String email = Email.getText();
+         int numero;
+         String contraseña = new String(Contraseña.getPassword());
+         String rol = (String) Rol.getSelectedItem();
+
+
+
+         // Validación inicial de los campos vacíos
+         if (nombre.trim().isEmpty() || ID.getText().trim().isEmpty() ||  direccion.trim().isEmpty() ||  email.trim().isEmpty() || 
+             new String(Contraseña.getPassword()).trim().isEmpty() || Rol.getSelectedItem()== null) { 
+        
+             JOptionPane.showMessageDialog(rootPane, "Debes llenar todos los campos, son obligatorios.");
+             return;
+            }
+ 
+         // Validar que ID y número sean numéricos
+         try {
+              id = Integer.parseInt(ID.getText().trim());
+              numero = Integer.parseInt(Numero.getText().trim());
+        } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(rootPane, "El ID y el número deben ser valores numéricos.");
+        return;
+        }
+
+    // Validar formato de email
+    if (!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) {
+        JOptionPane.showMessageDialog(rootPane, "El correo electrónico no tiene un formato válido.");
+        return;
+    }
+
+    try {
+        // Configuración de conexión a la base de datos
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/registro", "root", "");
+
+        // Verificar si el ID ya existe en la base de datos
+        String checkQuery = "SELECT COUNT(*) FROM usuarios WHERE id = ?";
+        PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
+        checkStmt.setInt(1, id);
+        ResultSet rs = checkStmt.executeQuery();
+        rs.next();
+        if (rs.getInt(1) > 0) {
+            JOptionPane.showMessageDialog(null, "ID ya en uso: " + id, "Error", JOptionPane.ERROR_MESSAGE);
+            limpiar();
+            return;
+        }
+
+        // Insertar el nuevo usuario si el ID no existe
+        String insertQuery = "INSERT INTO usuarios (nombre, id, direccion, email, numero, contrasena, rol) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
+        insertStmt.setString(1, nombre);
+        insertStmt.setInt(2, id);
+        insertStmt.setString(3, direccion);
+        insertStmt.setString(4, email);
+        insertStmt.setInt(5, numero);
+        insertStmt.setString(6, contraseña);
+        insertStmt.setString(7, rol);
+
+        int rowsAffected = insertStmt.executeUpdate();
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(null, "Usuario creado con éxito!");
+            limpiar();
+            setVisible(false);
+            Ventanalogin main = new Ventanalogin();
+            main.setVisible(true);
+            main.setLocationRelativeTo(null);
+        }
+
+        conn.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        limpiar();
+    }
         
         
         
@@ -183,40 +257,21 @@ public class Registro extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+   
+    
+    private void limpiar() {
+    Nombre.setText("");          // Limpia el campo de nombre
+    ID.setText("");              // Limpia el campo de ID
+    Direccion.setText("");       // Limpia el campo de dirección
+    Email.setText("");           // Limpia el campo de email
+    Numero.setText("");          // Limpia el campo de número
+    Contraseña.setText("");      // Limpia el campo de contraseña
+                // Limpia la selección del rol
+}
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registro().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Contraseña;
+    private javax.swing.JPasswordField Contraseña;
     private javax.swing.JTextField Direccion;
     private javax.swing.JTextField Email;
     private javax.swing.JTextField ID;
