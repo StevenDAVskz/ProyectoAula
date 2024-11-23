@@ -208,7 +208,7 @@ public class Registro extends javax.swing.JFrame {
     }
 
         ClienteCommandHandler Create = new ClienteCommandHandler();
-        Create.createCliente(nombre, id, direccion, email, numero, contraseña, contraseña, contraseña, id);
+        Create.createUsuario(id, nombre, direccion, email, numero, contraseña, rol);
         
         
         
