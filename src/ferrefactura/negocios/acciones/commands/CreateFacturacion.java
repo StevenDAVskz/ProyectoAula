@@ -26,27 +26,27 @@ public class CreateFacturacion extends Facturacion{
         super(idfactura, productos, user, precio);
     }
 
-    public int getIdfactura() {
+    public int getidfactura() {
         return idfactura;
     }
 
-    public void setIdfactura(int idfactura) {
+    public void setidfactura(int idfactura) {
         this.idfactura = idfactura;
     }
 
-    public String getProductos() {
+    public String getproductos() {
         return productos;
     }
 
-    public void setProductos(String productos) {
+    public void setproductos(String productos) {
         this.productos = productos;
     }
 
-    public String getUser() {
+    public String getuser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setuser(String user) {
         this.user = user;
     }
 

@@ -33,7 +33,7 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        idbills = new javax.swing.JTextField();
+        precio = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -42,6 +42,8 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
         productosbils = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        idbills1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,35 +61,35 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(82, 82, 82)
                 .addComponent(jLabel1)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, -1));
-        jPanel1.add(idbills, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 150, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, -1));
+        jPanel1.add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 150, -1));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("USUARIO");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 110, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 110, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setText("Productos");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 110, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 110, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel6.setText("ID Productos");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 150, 30));
-        jPanel1.add(Usuariobills, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 150, -1));
-        jPanel1.add(productosbils, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 200, 70));
+        jLabel6.setText("Precio");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 110, 30));
+        jPanel1.add(Usuariobills, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 150, -1));
+        jPanel1.add(productosbils, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 200, 70));
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -98,7 +100,7 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, 60));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 170, 60));
 
         jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +110,12 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 550));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setText("ID Productos");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 150, 30));
+        jPanel1.add(idbills1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 150, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -132,9 +139,13 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
         if (facNew != null) {
            String BillsPro = facNew.getProductos();
            String BillsUsr = facNew.getUser();
+           double BillsP = facNew.getPrecio();
            Usuariobills.setText(BillsUsr);
            productosbils.setText(BillsPro);
-           idbills.setText(idFacturaStr);
+           idbills1.setText(idFacturaStr);
+           String bills = String.valueOf(BillsP);
+           precio.setText(bills);
+           
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -151,7 +162,7 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Usuariobills;
-    private javax.swing.JTextField idbills;
+    private javax.swing.JTextField idbills1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -159,8 +170,10 @@ public class FACTURASMOSTRAR extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField precio;
     private javax.swing.JTextField productosbils;
     // End of variables declaration//GEN-END:variables
 }

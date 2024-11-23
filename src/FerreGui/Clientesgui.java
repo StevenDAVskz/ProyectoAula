@@ -181,7 +181,9 @@ public class Clientesgui extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
+        PRODUCTOMOSTRAR a = new PRODUCTOMOSTRAR();
+        a.setVisible(true);
+        setVisible(false);
         
         
         
@@ -251,7 +253,7 @@ public class Clientesgui extends javax.swing.JFrame {
             return;
         }
         
-        CreateProducto productoNuevo = new CreateProducto(nombre, WIDTH, MAXIMIZED_VERT, Descripcion, ERROR, Calidad, EXIT_ON_CLOSE);
+        CreateProducto productoNuevo = new CreateProducto(nombre, WIDTH, ERROR, MAXIMIZED_VERT, Descripcion, Calidad, EXIT_ON_CLOSE);
         ProductoRepository guardar = new ProductoRepository();
         guardar.save(productoNuevo);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed

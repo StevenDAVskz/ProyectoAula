@@ -11,51 +11,79 @@ import ferrefactura.Clases.Productos;
  * @author USUARIO
  */
 public class CreateProducto extends Productos{
-    private String nombre;
-    private int id;
-    private int CantidadVentas;
-    private String Descripcion;
-    private double Precio;
-    private String Calidad;
-    private int CantidadAlmacen;
+   protected String nombre;
+    protected int id;
+    protected double Precio;
+    protected double CantidadVentas;
+    protected String Descripcion;
+    protected String Calidad;
+    protected int CantidadAlmacen;
 
-    public CreateProducto(String nombre, int id, int CantidadVentas, String Descripcion, double Precio, String Calidad, int CantidadAlmacen) {
-        this.nombre = nombre;
-        this.id = id;
-        this.CantidadVentas = CantidadVentas;
-        this.Descripcion = Descripcion;
-        this.Precio = Precio;
-        this.Calidad = Calidad;
-        this.CantidadAlmacen = CantidadAlmacen;
+    public CreateProducto() {
+    }
+
+    public CreateProducto(String nombre, int id, double Precio, double CantidadVentas, String Descripcion, String Calidad, int CantidadAlmacen) {
+        super(nombre, id, Precio, CantidadVentas, Descripcion, Calidad, CantidadAlmacen);
     }
 
     public String getNombre() {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public int getId() {
         return id;
     }
 
-    public double getCantidadVentas() {
-        return CantidadVentas;
-    }
-
-    public String getDescripcion() {
-        return Descripcion;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public double getPrecio() {
         return Precio;
     }
 
+    public void setPrecio(double Precio) {
+        this.Precio = Precio;
+    }
+
+    public double getCantidadVentas() {
+        return CantidadVentas;
+    }
+
+    public void setCantidadVentas(double CantidadVentas) {
+        this.CantidadVentas = CantidadVentas;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
     public String getCalidad() {
         return Calidad;
+    }
+
+    public void setCalidad(String Calidad) {
+        this.Calidad = Calidad;
     }
 
     public int getCantidadAlmacen() {
         return CantidadAlmacen;
     }
+
+    public void setCantidadAlmacen(int CantidadAlmacen) {
+        this.CantidadAlmacen = CantidadAlmacen;
+    }
+
     
+  
+  
     
 }
