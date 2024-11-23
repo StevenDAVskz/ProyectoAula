@@ -155,9 +155,12 @@ Registro registrar = new Registro();
         // Método de autenticación en tu clase (por ejemplo, dentro de tu método login)
 String id = IDcampo.getText();
 String contraseña = CampoContra.getText();
+int indexCombo = Rol.getSelectedIndex();
+
+
 
 // Validar campos
-if (id.trim().isEmpty() || contraseña.trim().isEmpty()) {
+if (id.trim().isEmpty() || contraseña.trim().isEmpty() || indexCombo == 0) {
     JOptionPane.showMessageDialog(null, "Por favor llenar el campo requerido");
     return;
 }

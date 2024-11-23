@@ -67,31 +67,33 @@ public class ClienteRepository {
     }
 
     // Método para encontrar un cliente por ID
-    public Clientes findById(int id) {
-        String query = "SELECT * FROM usuarios WHERE id = ?";
-        Clientes cliente = null;
+    public Usuarios findById(int id) {
+    String query = "SELECT * FROM usuarios WHERE id = ?";
+    Usuarios usuario = null;  // Cambiado a 'Usuarios'
 
-        try {
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                Usuarios usuarios = new Usuarios (
-                    rs.getString("nombre"),
-                    rs.getInt("id"),
-                    rs.getString("direccion"),
-                    rs.getString("email"),
-                    rs.getInt("numero"),
-                    rs.getString("contrasena"),
-                    rs.getString("rol")
-                );
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al encontrar el cliente: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    try {
+        PreparedStatement stmt = conn.prepareStatement(query);
+        stmt.setInt(1, id);
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            // Aquí estamos usando la clase 'Usuarios' en lugar de 'Clientes'
+            usuario = new Usuarios(
+                rs.getString("nombre"),
+                rs.getInt("id"),
+                rs.getString("direccion"),
+                rs.getString("email"),
+                rs.getInt("numero"),
+                rs.getString("contrasena"),
+                rs.getString("rol")
+            );
         }
-
-        return cliente;
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al encontrar el usuario: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+
+    return usuario;  // Retorna el objeto 'Usuarios'
+}
+
 
     // Método para obtener todos los clientes
     public ResultSet findAll() {

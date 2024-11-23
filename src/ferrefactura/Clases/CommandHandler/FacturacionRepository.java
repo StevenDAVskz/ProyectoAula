@@ -30,8 +30,8 @@ public class FacturacionRepository {
     
     // Método para guardar un producto
 public boolean save(Facturacion facturacion) {
-    String checkQuery = "SELECT COUNT(*) FROM productos WHERE id_factura = ?";
-    String insertQuery = "INSERT INTO productos (id_factura, producto, usuario) VALUES (?, ?, ?)";
+    String checkQuery = "SELECT COUNT(*) FROM facturas WHERE id_factura = ?";
+    String insertQuery = "INSERT INTO facturas (id_factura, producto, usuario) VALUES (?, ?, ?)";
 
     try {
         // Verificar si el ID de la factura ya existe en la base de datos
@@ -66,7 +66,7 @@ public boolean save(Facturacion facturacion) {
 
 // Método para encontrar un producto por ID de factura
 public Facturacion findById(int idFactura) {
-    String query = "SELECT * FROM productos WHERE id_factura = ?";
+    String query = "SELECT * FROM facturas WHERE id_factura = ?";
     Facturacion facturacion = null;
 
     try {
@@ -89,7 +89,7 @@ public Facturacion findById(int idFactura) {
 
 // Método para obtener todos los productos
 public ResultSet findAll() {
-    String query = "SELECT * FROM productos";
+    String query = "SELECT * FROM facturas";
     ResultSet rs = null;
 
     try {
@@ -104,7 +104,7 @@ public ResultSet findAll() {
 
 // Método para eliminar un producto por ID de factura
 public boolean delete(int idFactura) {
-    String query = "DELETE FROM productos WHERE id_factura = ?";
+    String query = "DELETE FROM facturas WHERE id_factura = ?";
 
     try {
         PreparedStatement stmt = conn.prepareStatement(query);

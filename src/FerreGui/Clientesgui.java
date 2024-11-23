@@ -4,7 +4,10 @@
  */
 package FerreGui;
 
+import ferrefactura.Clases.CommandHandler.FacturacionRepository;
 import ferrefactura.Clases.CommandHandler.ProductoRepository;
+import ferrefactura.Clases.Facturacion;
+import ferrefactura.negocios.acciones.commands.CreateFacturacion;
 import ferrefactura.negocios.acciones.commands.CreateProducto;
 import javax.swing.JOptionPane;
 
@@ -38,8 +41,11 @@ public class Clientesgui extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,6 +85,11 @@ public class Clientesgui extends javax.swing.JFrame {
         jMenu1.setText("Facturas");
 
         jMenuItem1.setText("Buscar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setText("Crear");
@@ -94,12 +105,31 @@ public class Clientesgui extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
+        jMenuItem6.setText("Editar");
+        jMenu1.add(jMenuItem6);
+
         jMenuBar1.add(jMenu1);
 
         jMenu3.setText("Productos");
 
         jMenuItem2.setText("Buscar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem2);
+
+        jMenuItem4.setText("Crear");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
+
+        jMenuItem5.setText("Editar");
+        jMenu3.add(jMenuItem5);
 
         jMenuBar1.add(jMenu3);
 
@@ -113,7 +143,47 @@ public class Clientesgui extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3MouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+       
+        // Solicitar ID de la factura
+        String idFacturaStr = JOptionPane.showInputDialog("Ingrese el ID de la factura:");
+        int idFactura;
+        try {
+            idFactura = Integer.parseInt(idFacturaStr); // Convertimos a int
+            if (idFactura <= 0) {
+                JOptionPane.showMessageDialog(null, "El ID de la factura debe ser un número mayor que 0.");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El ID de la factura debe ser un número entero.");
+            return;
+        }
+
+        // Solicitar productos de la factura
+        String productos = JOptionPane.showInputDialog("Ingrese los productos de la factura (separados por comas):");
+        if (productos == null || productos.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar al menos un producto.");
+            return;
+        }
+
+        // Solicitar el nombre del usuario
+        String user = JOptionPane.showInputDialog("Ingrese el nombre del usuario:");
+        if (user == null || user.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar el nombre del usuario.");
+            return;
+            
+         
+        }
+           CreateFacturacion crear = new CreateFacturacion(idFactura, productos, user);
+           FacturacionRepository n = new FacturacionRepository();
+           n.save(crear);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+ // TODO add your handling code here:
           var nombre = JOptionPane.showInputDialog("Ingrese el nombre del producto:");
         
         // Validamos que el campo no esté vacío
@@ -178,8 +248,16 @@ public class Clientesgui extends javax.swing.JFrame {
         
         CreateProducto productoNuevo = new CreateProducto(nombre, WIDTH, MAXIMIZED_VERT, Descripcion, ERROR, Calidad, EXIT_ON_CLOSE);
         ProductoRepository guardar = new ProductoRepository();
-        guardar.save(productoNuevo);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        guardar.save(productoNuevo);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       FACTURASMOSTRAR a = new  FACTURASMOSTRAR();
+        setVisible(false);
+        a.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,6 +273,9 @@ public class Clientesgui extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables

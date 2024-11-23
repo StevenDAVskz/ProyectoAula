@@ -4,11 +4,13 @@
  */
 package ferrefactura.negocios.acciones.commands;
 
+import ferrefactura.Clases.Usuarios;
+
 /**
  *
  * @author steve
  */
-public class UpdateClienteCommand extends CreateClienteCommand{
+public class UpdateClienteCommand extends Usuarios{
     
     public UpdateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String Rol) {
         super(nombre, id, direccion, email, numero, contrasena, Rol);

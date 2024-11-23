@@ -12,20 +12,20 @@ import ferrefactura.Clases.Usuarios;
  */
 public class CreateClienteCommand extends Usuarios{
     private String nombre;
-    private int id;
+    private int ID;
     private String direccion;
     private String email;
     protected int numero;
-    private String contrasena;
+    private String contraseña;
     protected String Rol;
 
-    public CreateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String Rol) {
+    public CreateClienteCommand(String nombre, int ID, String direccion, String email, int numero, String contraseña, String Rol) {
         this.nombre = nombre;
-        this.id = id;
+        this.ID = ID;
         this.direccion = direccion;
         this.email = email;
         this.numero = numero;
-        this.contrasena = contrasena;
+        this.contraseña = contraseña;
         this.Rol = Rol;
         
     }
@@ -34,8 +34,8 @@ public class CreateClienteCommand extends Usuarios{
         return nombre;
     }
 
-    public int getId() {
-        return id;
+    public int getID() {
+        return ID;
     }
 
     public String getDireccion() {
@@ -50,8 +50,8 @@ public class CreateClienteCommand extends Usuarios{
         return numero;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getContraseña() {
+        return contraseña;
     }
     
      public String getRol() {

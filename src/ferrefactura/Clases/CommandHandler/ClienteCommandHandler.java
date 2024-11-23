@@ -25,11 +25,11 @@ public class ClienteCommandHandler {
         Usuarios cliente;
        cliente = new Usuarios(
                 command.getNombre(),
-                command.getId(),
+                command.getID(),
                 command.getDireccion(),
                 command.getEmail(),
                 command.getNumero(),
-                command.getContrasena(),
+                command.getContraseña(),
                command.getRol()
                 
                 
@@ -38,14 +38,14 @@ public class ClienteCommandHandler {
     }
     
     public void handle(UpdateClienteCommand command) {
-        Clientes cliente = clienteRepository.findById(command.getId());
+        Usuarios cliente = clienteRepository.findById(command.getID());
         if (cliente != null) {
             // Actualiza los atributos del cliente
             cliente.setNombre(command.getNombre());
-            cliente.setDirrecion(command.getDireccion());
+            cliente.setDireccion(command.getDireccion());
             cliente.setEmail(command.getEmail());
             cliente.setNumero(command.getNumero());
-            cliente.setContraseña(command.getContrasena());
+            cliente.setContraseña(command.getContraseña());
             cliente.setRol(command.getRol());
             clienteRepository.save(cliente); // Guarda las actualizaciones
         }
@@ -53,7 +53,7 @@ public class ClienteCommandHandler {
     
     public void handle(DeleteClienteCommand command) {
     // Verificar si el cliente existe
-    Clientes cliente = clienteRepository.findById(command.getId());
+    Usuarios cliente = clienteRepository.findById(command.getId());
     
     if (cliente != null) {
         // Eliminar el cliente del repositorio

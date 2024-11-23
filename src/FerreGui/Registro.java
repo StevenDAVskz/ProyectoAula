@@ -206,8 +206,9 @@ public class Registro extends javax.swing.JFrame {
         ClienteRepository comotedelagana=new ClienteRepository();
         comotedelagana.save(c);
         
-        
-        
+        setVisible(false);
+        Ventanalogin n = new Ventanalogin();
+        n.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

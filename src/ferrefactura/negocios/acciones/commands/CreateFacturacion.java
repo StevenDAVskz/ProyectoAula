@@ -4,6 +4,7 @@
  */
 package ferrefactura.negocios.acciones.commands;
 
+import ferrefactura.Clases.Facturacion;
 import ferrefactura.Clases.Productos;
 import ferrefactura.Clases.Trabajadores;
 import ferrefactura.Clases.Usuarios;
@@ -12,7 +13,7 @@ import ferrefactura.Clases.Usuarios;
  *
  * @author LENOVO
  */
-public class CreateFacturacion {
+public class CreateFacturacion extends Facturacion{
    private int idfactura; 
     private String productos;
     private String user;
