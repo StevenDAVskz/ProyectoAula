@@ -11,21 +11,21 @@ package ferrefactura.Clases;
 public class Productos {
     protected String nombre;
     protected int id;
+    protected double Precio;
     protected int CantidadVentas;
     protected String Descripcion;
-    protected int Precio;
     protected String Calidad;
     protected int CantidadAlmacen;
-    
+
     public Productos() {
     }
 
-    public Productos(String nombre, int id, int CantidadVentas, String Descripcion, int Precio, String Calidad, int CantidadAlmacen) {
+    public Productos(String nombre, int id, double Precio, int CantidadVentas, String Descripcion, String Calidad, int CantidadAlmacen) {
         this.nombre = nombre;
         this.id = id;
+        this.Precio = Precio;
         this.CantidadVentas = CantidadVentas;
         this.Descripcion = Descripcion;
-        this.Precio = Precio;
         this.Calidad = Calidad;
         this.CantidadAlmacen = CantidadAlmacen;
     }
@@ -38,14 +38,20 @@ public class Productos {
         this.nombre = nombre;
     }
 
-    
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(double Precio) {
+        this.Precio = Precio;
     }
 
     public int getCantidadVentas() {
@@ -64,14 +70,6 @@ public class Productos {
         this.Descripcion = Descripcion;
     }
 
-    public int getPrecio() {
-        return Precio;
-    }
-
-    public void setPrecio(int Precio) {
-        this.Precio = Precio;
-    }
-
     public String getCalidad() {
         return Calidad;
     }
@@ -88,4 +86,5 @@ public class Productos {
         this.CantidadAlmacen = CantidadAlmacen;
     }
     
+   
 }
