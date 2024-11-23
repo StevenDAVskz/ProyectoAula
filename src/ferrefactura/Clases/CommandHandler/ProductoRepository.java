@@ -32,23 +32,23 @@ public boolean save(Productos producto) {
     try {
         // Verificar si el ID del producto ya existe en la base de datos
         PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
-        checkStmt.setInt(1, producto.getId());
+        checkStmt.setInt(1, producto.getid());
         ResultSet rs = checkStmt.executeQuery();
         rs.next();
         if (rs.getInt(1) > 0) {
-            JOptionPane.showMessageDialog(null, "ID de producto ya en uso: " + producto.getId(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ID de producto ya en uso: " + producto.getid(), "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
         // Insertar el nuevo producto en la base de datos
         PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
-        insertStmt.setString(1, producto.getNombre());
-        insertStmt.setInt(2, producto.getId());
-        insertStmt.setDouble(3, producto.getPrecio());
-        insertStmt.setDouble(4, producto.getCantidadVentas());
-        insertStmt.setString(5, producto.getDescripcion());
-        insertStmt.setString(6, producto.getCalidad());
-        insertStmt.setInt(7, producto.getCantidadAlmacen());
+        insertStmt.setString(1, producto.getnombre());
+        insertStmt.setInt(2, producto.getid());
+        insertStmt.setDouble(3, producto.getprecio());
+        insertStmt.setDouble(4, producto.getcantidadVentas());
+        insertStmt.setString(5, producto.getdescripcion());
+        insertStmt.setString(6, producto.getcalidad());
+        insertStmt.setInt(7, producto.getcantidadAlmacen());
 
         int rowsAffected = insertStmt.executeUpdate();
         if (rowsAffected > 0) {

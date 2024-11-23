@@ -191,6 +191,7 @@ public class Clientesgui extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
  // TODO add your handling code here:
+ int id;
           var nombre = JOptionPane.showInputDialog("Ingrese el nombre del producto:");
         
         // Validamos que el campo no esté vacío
@@ -202,7 +203,7 @@ public class Clientesgui extends javax.swing.JFrame {
         // Solicitar el ID (convertido a entero)
         String idStr = JOptionPane.showInputDialog("Ingrese el ID del producto:");
         try {
-           int id = Integer.parseInt(idStr);
+           id = Integer.parseInt(idStr);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "El ID debe ser un número entero.");
             return;
@@ -253,7 +254,7 @@ public class Clientesgui extends javax.swing.JFrame {
             return;
         }
         
-        CreateProducto productoNuevo = new CreateProducto(nombre, WIDTH, ERROR, MAXIMIZED_VERT, Descripcion, Calidad, EXIT_ON_CLOSE);
+        CreateProducto productoNuevo = new CreateProducto(nombre, id, ERROR, MAXIMIZED_VERT, Descripcion, Calidad, EXIT_ON_CLOSE);
         ProductoRepository guardar = new ProductoRepository();
         guardar.save(productoNuevo);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed

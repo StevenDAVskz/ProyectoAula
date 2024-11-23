@@ -135,9 +135,9 @@ public class PRODUCTOMOSTRAR extends javax.swing.JFrame {
         ProductoRepository buscar = new ProductoRepository();
         Productos facNew = buscar.findById(idFactura);
         if (facNew != null) {
-            String BillsPro = facNew.getNombre();
-            String BillsUsr = String.valueOf(facNew.getCantidadVentas());
-            String BillsP = String.valueOf(facNew.getPrecio());
+            String BillsPro = facNew.getnombre();
+            String BillsUsr = String.valueOf(facNew.getcantidadVentas());
+            String BillsP = String.valueOf(facNew.getprecio());
             Usuariobills.setText(BillsPro);
             productosbils.setText(BillsUsr);
             idbills1.setText(idFacturaStr);

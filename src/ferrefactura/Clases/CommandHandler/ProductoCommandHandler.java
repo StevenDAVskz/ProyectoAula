@@ -39,12 +39,12 @@ public class ProductoCommandHandler {
         Productos producto = productoRepository.findById(command.getId());
         if (producto != null) {
             // Actualiza los atributos del producto
-            producto.setNombre(command.getNombre());
-            producto.setPrecio(command.getPrecio());
-            producto.setCantidadVentas(command.getCantidadVentas());
-            producto.setDescripcion(command.getDescripcion());
-            producto.setCalidad(command.getCalidad());
-            producto.setCantidadAlmacen(command.getCantidadAlmacen());
+            producto.setnombre(command.getNombre());
+            producto.setprecio(command.getPrecio());
+            producto.setcantidadVentas(command.getCantidadVentas());
+            producto.setdescripcion(command.getDescripcion());
+            producto.setcalidad(command.getCalidad());
+            producto.setcantidadAlmacen(command.getCantidadAlmacen());
             productoRepository.save(producto); // Guarda las actualizaciones
         }
     }

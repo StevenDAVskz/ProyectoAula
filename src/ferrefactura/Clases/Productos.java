@@ -30,59 +30,59 @@ public class Productos {
         this.CantidadAlmacen = CantidadAlmacen;
     }
 
-    public String getNombre() {
+    public String getnombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setnombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public int getid() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setid(int id) {
         this.id = id;
     }
 
-    public double getPrecio() {
+    public double getprecio() {
         return Precio;
     }
 
-    public void setPrecio(double Precio) {
+    public void setprecio(double Precio) {
         this.Precio = Precio;
     }
 
-    public double getCantidadVentas() {
+    public double getcantidadVentas() {
         return CantidadVentas;
     }
 
-    public void setCantidadVentas(double CantidadVentas) {
+    public void setcantidadVentas(double CantidadVentas) {
         this.CantidadVentas = CantidadVentas;
     }
 
-    public String getDescripcion() {
+    public String getdescripcion() {
         return Descripcion;
     }
 
-    public void setDescripcion(String Descripcion) {
+    public void setdescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
 
-    public String getCalidad() {
+    public String getcalidad() {
         return Calidad;
     }
 
-    public void setCalidad(String Calidad) {
+    public void setcalidad(String Calidad) {
         this.Calidad = Calidad;
     }
 
-    public int getCantidadAlmacen() {
+    public int getcantidadAlmacen() {
         return CantidadAlmacen;
     }
 
-    public void setCantidadAlmacen(int CantidadAlmacen) {
+    public void setcantidadAlmacen(int CantidadAlmacen) {
         this.CantidadAlmacen = CantidadAlmacen;
     }
     
