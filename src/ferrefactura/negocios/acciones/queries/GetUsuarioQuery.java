@@ -9,13 +9,13 @@ package ferrefactura.negocios.acciones.queries;
  * @author steve
  */
 public class GetUsuarioQuery {
-    private int id;
+    private String id;
 
-    public GetUsuarioQuery(int id) {
+    public GetUsuarioQuery(String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 }

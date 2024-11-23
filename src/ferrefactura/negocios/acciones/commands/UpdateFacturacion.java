@@ -13,31 +13,41 @@ import ferrefactura.Clases.Usuarios;
  * @author LENOVO
  */
 public class UpdateFacturacion {
-      private int idfactura; 
-    private Usuarios user;
-    private Productos productos;
-    private Trabajadores trabajador;
+    private int idfactura; 
+    private String productos;
+    private String user;
+    
 
-    public UpdateFacturacion(int idfactura, Usuarios user, Productos productos, Trabajadores trabajador) {
+    public UpdateFacturacion() {
+    }
+
+    public UpdateFacturacion(int idfactura, String productos, String user) {
         this.idfactura = idfactura;
-        this.user = user;
         this.productos = productos;
-        this.trabajador = trabajador;
+        this.user = user;
     }
 
     public int getIdfactura() {
         return idfactura;
     }
 
-    public Usuarios getUser() {
-        return user;
+    public void setIdfactura(int idfactura) {
+        this.idfactura = idfactura;
     }
 
-    public Productos getProductos() {
+    public String getProductos() {
         return productos;
     }
 
-    public Trabajadores getTrabajador() {
-        return trabajador;
+    public void setProductos(String productos) {
+        this.productos = productos;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 }

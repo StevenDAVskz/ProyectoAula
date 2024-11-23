@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author steve
  */
-public class FacturaProvedor extends Facturacion {
+public class FacturaProvedor  {
     protected Provedor nombreProvedor;
     protected int saldo;
     protected Date diaDeCompra;
@@ -19,7 +19,7 @@ public class FacturaProvedor extends Facturacion {
     }
 
     public FacturaProvedor(Provedor nombreProvedor,int idfactura, int saldo, Date diaDeCompra, Usuarios user, Productos productos, Trabajadores trabajador) {
-        super(user, productos, trabajador, idfactura);
+       
         this.nombreProvedor = nombreProvedor;
         this.saldo = saldo;
         this.diaDeCompra = diaDeCompra;

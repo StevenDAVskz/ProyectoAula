@@ -50,7 +50,7 @@ public class ClienteRepository {
             insertStmt.setString(3, usuarios.getDireccion());
             insertStmt.setString(4, usuarios.getEmail());
             insertStmt.setInt(5, usuarios.getNumero());
-            insertStmt.setString(6, usuarios.getContrasena());
+            insertStmt.setString(6, usuarios.getContraseña());
             insertStmt.setString(7, usuarios.getRol());
 
             int rowsAffected = insertStmt.executeUpdate();

@@ -114,10 +114,7 @@ public class Clientesgui extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-  
-
-   
-        String nombre = JOptionPane.showInputDialog("Ingrese el nombre del producto:");
+          var nombre = JOptionPane.showInputDialog("Ingrese el nombre del producto:");
         
         // Validamos que el campo no esté vacío
         if (nombre == null || nombre.trim().isEmpty()) {
@@ -127,9 +124,8 @@ public class Clientesgui extends javax.swing.JFrame {
 
         // Solicitar el ID (convertido a entero)
         String idStr = JOptionPane.showInputDialog("Ingrese el ID del producto:");
-        int id;
         try {
-            id = Integer.parseInt(idStr);
+           int id = Integer.parseInt(idStr);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "El ID debe ser un número entero.");
             return;
@@ -137,13 +133,8 @@ public class Clientesgui extends javax.swing.JFrame {
 
         // Solicitar el precio (convertido a doble)
         String precioStr = JOptionPane.showInputDialog("Ingrese el precio del producto:");
-        double Precio;
         try {
-            Precio = Double.parseDouble(precioStr);
-            if (Precio <= 0) {
-                JOptionPane.showMessageDialog(null, "El precio debe ser mayor que 0.");
-                return;
-            }
+           double Precio = Double.parseDouble(precioStr);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "El precio debe ser un número decimal.");
             return;
@@ -151,13 +142,8 @@ public class Clientesgui extends javax.swing.JFrame {
 
         // Solicitar la cantidad de ventas
         String cantidadVentasStr = JOptionPane.showInputDialog("Ingrese la cantidad de ventas:");
-        int CantidadVentas;
         try {
-            CantidadVentas = Integer.parseInt(cantidadVentasStr);
-            if (CantidadVentas <= 0) {
-                JOptionPane.showMessageDialog(null, "La cantidad de ventas debe ser mayor que 0.");
-                return;
-            }
+          int  CantidadVentas = Integer.parseInt(cantidadVentasStr);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "La cantidad de ventas debe ser un número entero.");
             return;
@@ -172,45 +158,25 @@ public class Clientesgui extends javax.swing.JFrame {
             return;
         }
 
-        // Solicitar la calidad con opciones predefinidas
-        String Calidad = JOptionPane.showInputDialog("Ingrese la calidad del producto (Opciones: Buena, Excelente, Media, Mala, Pesima):");
-        String[] opcionesCalidad = {"Buena", "Excelente", "Media", "Mala", "Pesima"};
-        boolean calidadValida = false;
-
-        for (String opcion : opcionesCalidad) {
-            if (opcion.equalsIgnoreCase(Calidad)) {
-                calidadValida = true;
-                break;
-            }
-        }
-
-        if (!calidadValida) {
-            JOptionPane.showMessageDialog(null, "La calidad debe ser una de las siguientes opciones: Buena, Excelente, Media, Mala, Pesima.");
+        // Solicitar la calidad
+       String Calidad = JOptionPane.showInputDialog("Ingrese la calidad del producto:");
+        
+        // Validamos que la calidad no esté vacía
+        if (Calidad == null || Calidad.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "La calidad no puede estar vacía.");
             return;
         }
 
         // Solicitar la cantidad en almacén
         String cantidadAlmacenStr = JOptionPane.showInputDialog("Ingrese la cantidad en almacén:");
-        int CantidadAlmacen;
         try {
-            CantidadAlmacen = Integer.parseInt(cantidadAlmacenStr);
-            if (CantidadAlmacen < 0) {
-                JOptionPane.showMessageDialog(null, "La cantidad en almacén no puede ser negativa.");
-                return;
-            }
+           int CantidadAlmacen = Integer.parseInt(cantidadAlmacenStr);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "La cantidad en almacén debe ser un número entero.");
             return;
         }
-
-       
-      
-    
-
- 
-
         
-        CreateProducto productoNuevo = new CreateProducto(nombre, id, MAXIMIZED_VERT, Descripcion, ERROR, Calidad, EXIT_ON_CLOSE);
+        CreateProducto productoNuevo = new CreateProducto(nombre, WIDTH, MAXIMIZED_VERT, Descripcion, ERROR, Calidad, EXIT_ON_CLOSE);
         ProductoRepository guardar = new ProductoRepository();
         guardar.save(productoNuevo);
     }//GEN-LAST:event_jMenuItem3ActionPerformed

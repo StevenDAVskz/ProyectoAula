@@ -13,34 +13,45 @@ import ferrefactura.negocios.acciones.commands.UpdateFacturacion;
  * @author LENOVO
  */
 public class FacturacionCommandHandler {
-    private FacturacionRepository facturacionrepository;
-    
-     public FacturacionCommandHandler(FacturacionRepository facturacionrepository) {
-        this.facturacionrepository = facturacionrepository;
+    private FacturacionRepository facturacionRepository;
+
+    public FacturacionCommandHandler(FacturacionRepository facturacionRepository) {
+        this.facturacionRepository = facturacionRepository;
     }
-    public void handler(CreateFacturacion command){
-        Facturacion facturacion=new Facturacion(
-            command.getUser(),
-            command.getProductos(),
-            command.getTrabajador(),
-            command.getIdfactura());
-        facturacionrepository.save(facturacion);
+
+    // Manejar la creación de una factura
+    public void handle(CreateFacturacion command) {
+        Facturacion facturacion = new Facturacion(
+                command.getIdfactura(),           
+                command.getProductos(),    
+                command.getUser()
+        );
+        facturacionRepository.save(facturacion); // Guarda la nueva factura
     }
-    public void handler(UpdateFacturacion command){
-        Facturacion facturacion = facturacionrepository.findById(String.valueOf(command.getIdfactura()));
-        if(facturacion != null){
-            facturacion.setUser(command.getUser());
+
+    // Manejar la actualización de una factura
+    public void handle(UpdateFacturacion command) {
+        Facturacion facturacion = facturacionRepository.findById(command.getIdfactura());
+        if (facturacion != null) {
+            // Actualiza los atributos de la factura
             facturacion.setProductos(command.getProductos());
-            facturacion.setTrabajador(command.getTrabajador());
-            facturacionrepository.save(facturacion);
-        }    
+            facturacion.setUser(command.getUser());
+            facturacionRepository.save(facturacion); // Guarda las actualizaciones
+        }
     }
-    public void handler(DeleteFacturacion command){
-        Facturacion facturacion = facturacionrepository.findById(String.valueOf(command.getIdfactura()));
-        if (facturacion != null){
-            facturacionrepository.delete(String.valueOf(command.getIdfactura()));
-        }else{
+
+    // Manejar la eliminación de una factura
+    public void handle(DeleteFacturacion command) {
+        // Verificar si la factura existe
+        Facturacion facturacion = facturacionRepository.findById(command.getIdfactura());
+
+        if (facturacion != null) {
+            // Eliminar la factura del repositorio
+            facturacionRepository.delete(command.getIdfactura());
+        } else {
+            // Manejar el caso en que la factura no se encuentra (opcional)
             throw new RuntimeException("Factura no encontrada");
-        }       
+        }
     }
 }
+

@@ -3,14 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/negocios/acciones/commands/CreateProducto.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/negocios/acciones/commands/DeleteClienteCommand.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/FerreGui/Registro.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/FerreGui/FacturasAdmin.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/FerreGui/Clientesgui.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ProductoRepository.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/FerreGui/Ventanalogin.java</file>
-            <file>file:/C:/Users/steve/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/Clases/Productos.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ProductoCommandHandler.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/FacturaCliente.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/Facturacion.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ClienteRepository.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ProductoRepository.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/FacturaProvedor.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ClienteCommandHandler.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/CommandHandler/FacturacionCommandHandler.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/negocios/acciones/commands/UpdateFacturacion.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/negocios/acciones/commands/DeleteFacturacion.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/negocios/acciones/commands/CreateFacturacion.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/Clases/CommandHandler/FacturacionRepository.java</file>
+            <file>file:/C:/Users/USUARIO/OneDrive/Desktop/Nueva%20carpeta%20(2)/ProyectoAula/src/ferrefactura/negocios/acciones/commands/CreateProducto.java</file>
         </group>
     </open-files>
 </project-private>
