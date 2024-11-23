@@ -10,16 +10,17 @@ package ferrefactura.negocios.acciones.commands;
  */
 public class CreateClienteCommand {
     private String nombre;
-    private String id;
+    private int id;
     private String direccion;
     private String email;
-    private String numero;
+    private int numero;  // Cambiado de String a int
     private String contrasena;
     private String productoComprado;
     private String formaDePago;
-    private int pago;
+    private double pago;  // Este puede ser un double para representar la cantidad de dinero
 
-    public CreateClienteCommand(String nombre, String id, String direccion, String email, String numero, String contrasena, String productoComprado, String formaDePago, int pago) {
+    // Constructor con los parámetros correctos
+    public CreateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String productoComprado, String formaDePago, double pago) {
         this.nombre = nombre;
         this.id = id;
         this.direccion = direccion;
@@ -31,11 +32,13 @@ public class CreateClienteCommand {
         this.pago = pago;
     }
 
+    // Métodos getters para acceder a los valores de los atributos
+
     public String getNombre() {
         return nombre;
     }
 
-    public String getId() {
+    public int getId() {  // Cambiado a int
         return id;
     }
 
@@ -47,7 +50,7 @@ public class CreateClienteCommand {
         return email;
     }
 
-    public String getNumero() {
+    public int getNumero() {  // Cambiado a int
         return numero;
     }
 
@@ -63,11 +66,11 @@ public class CreateClienteCommand {
         return formaDePago;
     }
 
-    public int getPago() {
+    public double getPago() {  // Cambiado a double
         return pago;
     }
-    
 }
+
 
 // Comando para actualizar un cliente
 
