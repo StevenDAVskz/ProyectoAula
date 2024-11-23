@@ -13,41 +13,52 @@ import ferrefactura.negocios.acciones.commands.UpdateProducto;
  * @author USUARIO
  */
 public class ProductoCommandHandler {
-    private ProductoRepository productorepository;
+    private ProductoRepository productoRepository;
 
-    public ProductoCommandHandler(ProductoRepository productorepository) {
-        this.productorepository = productorepository;
+    public ProductoCommandHandler(ProductoRepository productoRepository) {
+        this.productoRepository = productoRepository;
     }
-    
-    public void handler(CreateProducto command){
-        Productos productos = new Productos(
-        command.getNombre(),
-        command.getId(),
-        command.getCantidadVentas(),
-        command.getDescripcion(),
-        command.getPrecio(),
-        command.getCalidad(),
-        command.getCantidadAlmacen());
-        productorepository.save(productos);
+
+    // Manejar la creación de un producto
+    public void handle(CreateProducto command) {
+        Productos producto;
+        producto = new Productos(
+                command.getNombre(),
+                command.getId(),
+                command.getPrecio(),
+                command.getCantidadVentas(),
+                command.getDescripcion(),
+                command.getCalidad(),
+                command.getCantidadAlmacen()
+        );
+        productoRepository.save(producto); // Guarda el nuevo producto
     }
-    public void handler(UpdateProducto command){
-        Productos productos = productorepository.findById(String.valueOf(command.getId()));
-        if(productos != null){
-            productos.setNombre(command.getNombre());
-            productos.setId(command.getId());
-            productos.setCantidadVentas(command.getCantidadVentas());
-            productos.setDescripcion(command.getDescripcion());
-            productos.setPrecio(command.getPrecio());
-            productos.setCalidad(command.getCalidad());
-            productos.setCantidadAlmacen(command.getCantidadAlmacen());
-            productorepository.save(productos);
+
+    // Manejar la actualización de un producto
+    public void handle(UpdateProducto command) {
+        Productos producto = productoRepository.findById(command.getId());
+        if (producto != null) {
+            // Actualiza los atributos del producto
+            producto.setNombre(command.getNombre());
+            producto.setPrecio(command.getPrecio());
+            producto.setCantidadVentas(command.getCantidadVentas());
+            producto.setDescripcion(command.getDescripcion());
+            producto.setCalidad(command.getCalidad());
+            producto.setCantidadAlmacen(command.getCantidadAlmacen());
+            productoRepository.save(producto); // Guarda las actualizaciones
         }
     }
-    public void handler(DeleteProducto command){
-        Productos productos = productorepository.findById(String.valueOf(command.getId()));
-        if (productos != null){
-            productorepository.delete(String.valueOf(command.getId()));
-        }else{
+
+    // Manejar la eliminación de un producto
+    public void handle(DeleteProducto command) {
+        // Verificar si el producto existe
+        Productos producto = productoRepository.findById(command.getId());
+
+        if (producto != null) {
+            // Eliminar el producto del repositorio
+            productoRepository.delete(command.getId());
+        } else {
+            // Manejar el caso en que el producto no se encuentra (opcional)
             throw new RuntimeException("Producto no encontrado");
         }
     }
