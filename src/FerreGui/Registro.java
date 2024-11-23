@@ -4,6 +4,8 @@
  */
 package FerreGui;
 
+import ferrefactura.negocios.acciones.commands.CreateClienteCommand;
+import ferrefactura.Clases.CommandHandler.ClienteRepository;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -206,48 +208,8 @@ public class Registro extends javax.swing.JFrame {
         return;
     }
 
-    try {
-        // Configuración de conexión a la base de datos
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ferrefactura", "root", "");
-
-        // Verificar si el ID ya existe en la base de datos
-        String checkQuery = "SELECT COUNT(*) FROM usuarios WHERE id = ?";
-        PreparedStatement checkStmt = conn.prepareStatement(checkQuery);
-        checkStmt.setInt(1, id);
-        ResultSet rs = checkStmt.executeQuery();
-        rs.next();
-        if (rs.getInt(1) > 0) {
-            JOptionPane.showMessageDialog(null, "ID ya en uso: " + id, "Error", JOptionPane.ERROR_MESSAGE);
-            limpiar();
-            return;
-        }
-
-        // Insertar el nuevo usuario si el ID no existe
-        String insertQuery = "INSERT INTO usuarios (nombre, id, direccion, email, numero, contrasena, rol) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
-        insertStmt.setString(1, nombre);
-        insertStmt.setInt(2, id);
-        insertStmt.setString(3, direccion);
-        insertStmt.setString(4, email);
-        insertStmt.setInt(5, numero);
-        insertStmt.setString(6, contraseña);
-        insertStmt.setString(7, rol);
-
-        int rowsAffected = insertStmt.executeUpdate();
-        if (rowsAffected > 0) {
-            JOptionPane.showMessageDialog(null, "Usuario creado con éxito!");
-            limpiar();
-            setVisible(false);
-            Ventanalogin main = new Ventanalogin();
-            main.setVisible(true);
-            main.setLocationRelativeTo(null);
-        }
-
-        conn.close();
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        limpiar();
-    }
+        CreateClienteCommand create = new CreateClienteCommand(nombre, id, direccion, email, numero, contraseña, rol);
+        
         
         
         
@@ -290,4 +252,8 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    private void CreateClienteCommand() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

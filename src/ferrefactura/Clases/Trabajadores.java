@@ -20,8 +20,8 @@ public class Trabajadores extends Usuarios{
         this.ProductosVendidos = ProductosVendidos;
     }
 
-    public Trabajadores(int Salario, String ProductosVendidos, String Nombre, String ID, String Dirrecion, String Email, String Numero, String Contraseña) {
-        super(Nombre, ID, Dirrecion, Email, Numero, Contraseña);
+    public Trabajadores(int Salario, String ProductosVendidos, String Nombre, int ID, String Direccion, String Email, int Numero, String Contraseña, String Rol) {
+        super(Nombre, ID, Direccion, Email, Numero, Contraseña, Rol);
         this.Salario = Salario;
         this.ProductosVendidos = ProductosVendidos;
     }

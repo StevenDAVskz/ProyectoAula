@@ -11,13 +11,13 @@ package ferrefactura.Clases;
 public class Clientes extends Usuarios{
     protected String ProductoComprado;
     protected String FormaDePago;
-    protected int Pago;
+    protected double Pago;
 
     public Clientes() {
     }
 
-    public Clientes(String ProductoComprado, String FormaDePago, int Pago, String Nombre, String ID, String Dirrecion, String Email, String Numero, String Contraseña) {
-        super(Nombre, ID, Dirrecion, Email, Numero, Contraseña);
+    public Clientes(String ProductoComprado, String FormaDePago, double Pago, String Nombre, int ID, String Direccion, String Email, int Numero, String Contraseña, String Rol) {
+        super(Nombre, ID, Direccion, Email, Numero, Contraseña, Rol);
         this.ProductoComprado = ProductoComprado;
         this.FormaDePago = FormaDePago;
         this.Pago = Pago;
@@ -39,7 +39,7 @@ public class Clientes extends Usuarios{
         this.FormaDePago = FormaDePago;
     }
 
-    public int getPago() {
+    public double getPago() {
         return Pago;
     }
 
@@ -55,20 +55,20 @@ public class Clientes extends Usuarios{
         this.Nombre = Nombre;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
-    public String getDirrecion() {
-        return Dirrecion;
+    public String getDireccion() {
+        return Direccion;
     }
 
     public void setDirrecion(String Dirrecion) {
-        this.Dirrecion = Dirrecion;
+        this.Direccion = Dirrecion;
     }
 
     public String getEmail() {
@@ -79,11 +79,11 @@ public class Clientes extends Usuarios{
         this.Email = Email;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return Numero;
     }
 
-    public void setNumero(String Numero) {
+    public void setNumero(int Numero) {
         this.Numero = Numero;
     }
 

@@ -10,32 +10,29 @@ package ferrefactura.negocios.acciones.commands;
  */
 public class CreateClienteCommand {
     private String nombre;
-    private String id;
+    private int id;
     private String direccion;
     private String email;
-    private String numero;
+    private int numero;
     private String contrasena;
-    private String productoComprado;
-    private String formaDePago;
-    private int pago;
+    private String Rol;
 
-    public CreateClienteCommand(String nombre, String id, String direccion, String email, String numero, String contrasena, String productoComprado, String formaDePago, int pago) {
+    public CreateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String Rol) {
         this.nombre = nombre;
         this.id = id;
         this.direccion = direccion;
         this.email = email;
         this.numero = numero;
         this.contrasena = contrasena;
-        this.productoComprado = productoComprado;
-        this.formaDePago = formaDePago;
-        this.pago = pago;
+        this.Rol = Rol;
+        
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -47,25 +44,18 @@ public class CreateClienteCommand {
         return email;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
     public String getContrasena() {
         return contrasena;
     }
-
-    public String getProductoComprado() {
-        return productoComprado;
+    
+     public String getRol() {
+        return Rol;
     }
-
-    public String getFormaDePago() {
-        return formaDePago;
-    }
-
-    public int getPago() {
-        return pago;
-    }
+    
     
 }
 

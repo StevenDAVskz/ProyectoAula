@@ -9,13 +9,13 @@ package ferrefactura.negocios.acciones.commands;
  * @author steve
  */
 public class DeleteClienteCommand {
-    private String id;
+    private int id;
 
-    public DeleteClienteCommand(String id) {
+    public DeleteClienteCommand(int id) {
         this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 }

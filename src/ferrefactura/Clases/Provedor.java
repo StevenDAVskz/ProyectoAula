@@ -16,8 +16,8 @@ public class Provedor extends Usuarios {
     public Provedor() {
     }
 
-    public Provedor(String Nombre, String ID, String Dirrecion, String Email, String Numero, String Contraseña) {
-        super(Nombre, ID, Dirrecion, Email, Numero, Contraseña);
+    public Provedor(String Nombre, int ID, String Dirrecion, String Email, int Numero, String Contraseña, String Rol) {
+        super(Nombre, ID, Dirrecion, Email, Numero, Contraseña,Rol);
     }
 
     public Provedor(int ProductosVendidos, int Pagos, String Encargos) {

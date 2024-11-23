@@ -12,22 +12,24 @@ package ferrefactura.Clases;
 public class Usuarios {
     
     protected String Nombre;
-    protected String ID;
-    protected String Dirrecion;
+    protected int ID;
+    protected String Direccion;
     protected String Email;
-    protected String Numero;
+    protected int Numero;
     protected String Contraseña;
+    protected String Rol;
 
     public Usuarios() {
     }
 
-    public Usuarios(String Nombre, String ID, String Dirrecion, String Email, String Numero, String Contraseña) {
+    public Usuarios(String Nombre, int ID, String Direccion, String Email, int Numero, String Contraseña, String Rol) {
         this.Nombre = Nombre;
         this.ID = ID;
-        this.Dirrecion = Dirrecion;
+        this.Direccion = Direccion;
         this.Email = Email;
         this.Numero = Numero;
         this.Contraseña = Contraseña;
+        this.Rol = Rol;
     }
 
     public String getNombre() {
@@ -38,20 +40,20 @@ public class Usuarios {
         this.Nombre = Nombre;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
-    public String getDirrecion() {
-        return Dirrecion;
+    public String getDireccion() {
+        return Direccion;
     }
 
-    public void setDirrecion(String Dirrecion) {
-        this.Dirrecion = Dirrecion;
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
 
     public String getEmail() {
@@ -62,11 +64,11 @@ public class Usuarios {
         this.Email = Email;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return Numero;
     }
 
-    public void setNumero(String Numero) {
+    public void setNumero(int Numero) {
         this.Numero = Numero;
     }
 
@@ -78,6 +80,13 @@ public class Usuarios {
         this.Contraseña = Contraseña;
     }
     
+    public String getRol() {
+        return Rol;
+    }
+    
+    public void setRol(String Rol) {
+        this.Rol = Rol;
+    }
    
     
 }

@@ -5,6 +5,7 @@
 package ferrefactura.Clases.CommandHandler;
 
 import ferrefactura.Clases.Clientes;
+import ferrefactura.Clases.Usuarios;
 import ferrefactura.negocios.acciones.commands.CreateClienteCommand;
 import ferrefactura.negocios.acciones.commands.DeleteClienteCommand;
 import ferrefactura.negocios.acciones.commands.UpdateClienteCommand;
@@ -21,17 +22,17 @@ public class ClienteCommandHandler {
     }
 
     public void handle(CreateClienteCommand command) {
-        Clientes cliente = new Clientes(
-           command.getProductoComprado(),
-        command.getFormaDePago(),
-        command.getPago(),
-        command.getNombre(),
-        command.getId(),
-        command.getDireccion(),
-        command.getEmail(),
-        command.getNumero(),
-        command.getContrasena()
-            
+        Usuarios cliente;
+       cliente = new Usuarios(
+                command.getNombre(),
+                command.getId(),
+                command.getDireccion(),
+                command.getEmail(),
+                command.getNumero(),
+                command.getContrasena(),
+               command.getRol()
+                
+                
         );
         clienteRepository.save(cliente); // Guarda el nuevo cliente
     }
@@ -40,14 +41,12 @@ public class ClienteCommandHandler {
         Clientes cliente = clienteRepository.findById(command.getId());
         if (cliente != null) {
             // Actualiza los atributos del cliente
-            cliente.setProductoComprado(command.getProductoComprado());
-            cliente.setFormaDePago(command.getFormaDePago());
-            cliente.setPago(command.getPago());
             cliente.setNombre(command.getNombre());
             cliente.setDirrecion(command.getDireccion());
             cliente.setEmail(command.getEmail());
             cliente.setNumero(command.getNumero());
             cliente.setContraseña(command.getContrasena());
+            cliente.setRol(command.getRol());
             clienteRepository.save(cliente); // Guarda las actualizaciones
         }
     }
@@ -65,4 +64,3 @@ public class ClienteCommandHandler {
     }
 }
 }
-

@@ -3,13 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/Clases/CommandHandler/FacturacionRepository.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ClienteCommandHandler.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/Diagramas/Diagrama2.puml</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/negocios/acciones/commands/CreateClienteCommand.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/Diagramas/Diagrama.puml</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/FerreGui/Clientes.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Escritorio/ProAula/ProyectoAula/src/ferrefactura/FerreFactura.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/negocios/acciones/queries/GetUsuarioQuery.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/negocios/acciones/queries/GetFacturacionQuery.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/Admin.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/Usuarios.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/FerreGui/Registro.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/negocios/acciones/commands/UpdateClienteCommand.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/Provedor.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/negocios/acciones/commands/CreateClienteCommand.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/negocios/acciones/commands/DeleteClienteCommand.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/CommandHandler/FacturacionCommandHandler.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/Clientes.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ClienteCommandHandler.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/FerreGui/Ventanalogin.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/Trabajadores.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/negocios/acciones/commands/CreateProducto.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/Clases/CommandHandler/ClienteRepository.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/ferrefactura/negocios/acciones/queries/GetProductoQuery.java</file>
+            <file>file:/C:/Users/intel%20core%20i5-9G/Desktop/Ejercicio/ProyectoAula/src/FerreGui/Clientes.java</file>
         </group>
     </open-files>
 </project-private>
