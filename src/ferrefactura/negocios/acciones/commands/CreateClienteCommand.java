@@ -4,18 +4,20 @@
  */
 package ferrefactura.negocios.acciones.commands;
 
+import ferrefactura.Clases.Usuarios;
+
 /**
  *
  * @author steve
  */
-public class CreateClienteCommand {
+public class CreateClienteCommand extends Usuarios{
     private String nombre;
     private int id;
     private String direccion;
     private String email;
-    private int numero;
+    protected int numero;
     private String contrasena;
-    private String Rol;
+    protected String Rol;
 
     public CreateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String Rol) {
         this.nombre = nombre;

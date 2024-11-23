@@ -8,56 +8,67 @@ package ferrefactura.negocios.acciones.commands;
  *
  * @author steve
  */
-public class UpdateClienteCommand {
-    private int id;
-    private String nombre;
-    private String direccion;
-    private String email;
-    private int numero;
-    private String contrasena;
-    private  String Rol;
-
-    public UpdateClienteCommand() {
-    }
-
-    public UpdateClienteCommand(int id, String nombre, String direccion, String email, int numero, String contrasena, String Rol) {
-        this.id = id;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.email = email;
-        this.numero = numero;
-        this.contrasena = contrasena;
-        this.Rol = Rol;
-    }
-
-    public int getId() {
-        return id;
+public class UpdateClienteCommand extends CreateClienteCommand{
+    
+    public UpdateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String Rol) {
+        super(nombre, id, direccion, email, numero, contrasena, Rol);
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getDireccion() {
-        return direccion;
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
     public int getNumero() {
-        return numero;
+        return Numero;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public void setNumero(int Numero) {
+        this.Numero = Numero;
+    }
+
+    public String getContraseña() {
+        return Contraseña;
+    }
+
+    public void setContraseña(String Contraseña) {
+        this.Contraseña = Contraseña;
     }
 
     public String getRol() {
         return Rol;
     }
+
+    public void setRol(String Rol) {
+        this.Rol = Rol;
+    }
     
-    
-    
+
 }

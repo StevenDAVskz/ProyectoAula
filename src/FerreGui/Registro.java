@@ -209,10 +209,9 @@ public class Registro extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, "El correo electrónico no tiene un formato válido.");
         return;
     }
-
-        Usuarios create=new Usuarios(nombre, id, direccion, email, numero, contraseña, rol);
+       CreateClienteCommand c = new CreateClienteCommand(nombre, id, direccion, email, numero, contraseña, rol);
         ClienteRepository comotedelagana=new ClienteRepository();
-        comotedelagana.save(create);
+        comotedelagana.save(c);
         
         
         
