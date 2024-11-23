@@ -31,7 +31,7 @@ public class FacturacionRepository {
     // Método para guardar un producto
 public boolean save(Facturacion facturacion) {
     String checkQuery = "SELECT COUNT(*) FROM facturas WHERE id_factura = ?";
-    String insertQuery = "INSERT INTO facturas (id_factura, producto, usuario) VALUES (?, ?, ?)";
+    String insertQuery = "INSERT INTO facturas (id_factura, producto, usuario, precio) VALUES (?, ?, ?, ?)";
 
     try {
         // Verificar si el ID de la factura ya existe en la base de datos
@@ -48,7 +48,9 @@ public boolean save(Facturacion facturacion) {
         PreparedStatement insertStmt = conn.prepareStatement(insertQuery);
         insertStmt.setInt(1, facturacion.getIdfactura());
         insertStmt.setString(2, facturacion.getProductos()); 
-        insertStmt.setString(3, facturacion.getUser()); 
+        insertStmt.setString(3, facturacion.getUser());
+        insertStmt.setDouble(4, facturacion.getPrecio()); 
+        
 
 
         int rowsAffected = insertStmt.executeUpdate();
@@ -77,7 +79,8 @@ public Facturacion findById(int idFactura) {
             facturacion = new Facturacion(
                 rs.getInt("id_factura"),
                 rs.getString("producto"),
-                rs.getString("usuario")
+                rs.getString("usuario"),
+                rs.getDouble("precio")
             );
         }
     } catch (SQLException e) {

@@ -17,15 +17,13 @@ public class CreateFacturacion extends Facturacion{
    private int idfactura; 
     private String productos;
     private String user;
-    
+    protected double precio;
 
     public CreateFacturacion() {
     }
 
-    public CreateFacturacion(int idfactura, String productos, String user) {
-        this.idfactura = idfactura;
-        this.productos = productos;
-        this.user = user;
+    public CreateFacturacion(int idfactura, String productos, String user, double precio) {
+        super(idfactura, productos, user, precio);
     }
 
     public int getIdfactura() {
@@ -51,4 +49,17 @@ public class CreateFacturacion extends Facturacion{
     public void setUser(String user) {
         this.user = user;
     }
+
+    public double getprecio() {
+        return precio;
+    }
+
+    public void setprecio(double precio) {
+        this.precio = precio;
+    }
+
+
+    
+    
+    
 }

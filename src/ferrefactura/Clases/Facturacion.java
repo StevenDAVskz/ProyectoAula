@@ -14,15 +14,16 @@ public class Facturacion {
     private int idfactura; 
     private String productos;
     private String user;
-    
+    protected double precio;
 
     public Facturacion() {
     }
 
-    public Facturacion(int idfactura, String productos, String user) {
+    public Facturacion(int idfactura, String productos, String user, double precio) {
         this.idfactura = idfactura;
         this.productos = productos;
         this.user = user;
+        this.precio = precio;
     }
 
     public int getIdfactura() {
@@ -48,6 +49,15 @@ public class Facturacion {
     public void setUser(String user) {
         this.user = user;
     }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+    
 
    
     

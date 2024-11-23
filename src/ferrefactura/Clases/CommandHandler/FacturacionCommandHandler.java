@@ -24,7 +24,8 @@ public class FacturacionCommandHandler {
         Facturacion facturacion = new Facturacion(
                 command.getIdfactura(),           
                 command.getProductos(),    
-                command.getUser()
+                command.getUser(),
+                command.getPrecio()
         );
         facturacionRepository.save(facturacion); // Guarda la nueva factura
     }
