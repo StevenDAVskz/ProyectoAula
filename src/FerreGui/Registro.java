@@ -6,7 +6,9 @@ package FerreGui;
 
 import ferrefactura.negocios.acciones.commands.CreateClienteCommand;
 import ferrefactura.Clases.CommandHandler.ClienteRepository;
+import ferrefactura.Clases.Usuarios;
 import javax.swing.JOptionPane;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -208,8 +210,9 @@ public class Registro extends javax.swing.JFrame {
         return;
     }
 
-        CreateClienteCommand create = new CreateClienteCommand(nombre, id, direccion, email, numero, contraseña, rol);
-        
+        Usuarios create=new Usuarios(nombre, id, direccion, email, numero, contraseña, rol);
+        ClienteRepository comotedelagana=new ClienteRepository();
+        comotedelagana.save(create);
         
         
         
