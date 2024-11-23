@@ -10,16 +10,16 @@ package ferrefactura.negocios.acciones.commands;
  */
 public class CreateClienteCommand {
     private String nombre;
-    private int id;
+    private String id;
     private String direccion;
     private String email;
-    private int numero;
+    private String numero;
     private String contrasena;
     private String productoComprado;
     private String formaDePago;
-    private double pago;
+    private int pago;
 
-    public CreateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String productoComprado, String formaDePago, double pago) {
+    public CreateClienteCommand(String nombre, String id, String direccion, String email, String numero, String contrasena, String productoComprado, String formaDePago, int pago) {
         this.nombre = nombre;
         this.id = id;
         this.direccion = direccion;
@@ -35,7 +35,7 @@ public class CreateClienteCommand {
         return nombre;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -47,7 +47,7 @@ public class CreateClienteCommand {
         return email;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
@@ -63,7 +63,7 @@ public class CreateClienteCommand {
         return formaDePago;
     }
 
-    public double getPago() {
+    public int getPago() {
         return pago;
     }
     

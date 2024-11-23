@@ -5,7 +5,6 @@
 package ferrefactura.Clases.CommandHandler;
 
 import ferrefactura.Clases.Clientes;
-import ferrefactura.Clases.Usuarios;
 import ferrefactura.negocios.acciones.commands.CreateClienteCommand;
 import ferrefactura.negocios.acciones.commands.DeleteClienteCommand;
 import ferrefactura.negocios.acciones.commands.UpdateClienteCommand;
@@ -22,15 +21,17 @@ public class ClienteCommandHandler {
     }
 
     public void handle(CreateClienteCommand command) {
-        Usuarios cliente;
-        cliente = new Usuarios(
-                command.getNombre(),
-                command.getId(),
-                command.getDireccion(),
-                command.getEmail(),
-                command.getNumero(),
-                command.getContrasena()
-                
+        Clientes cliente = new Clientes(
+           command.getProductoComprado(),
+        command.getFormaDePago(),
+        command.getPago(),
+        command.getNombre(),
+        command.getId(),
+        command.getDireccion(),
+        command.getEmail(),
+        command.getNumero(),
+        command.getContrasena()
+            
         );
         clienteRepository.save(cliente); // Guarda el nuevo cliente
     }
@@ -41,7 +42,7 @@ public class ClienteCommandHandler {
             // Actualiza los atributos del cliente
             cliente.setProductoComprado(command.getProductoComprado());
             cliente.setFormaDePago(command.getFormaDePago());
-            cliente.setPago((int) command.getPago());
+            cliente.setPago(command.getPago());
             cliente.setNombre(command.getNombre());
             cliente.setDirrecion(command.getDireccion());
             cliente.setEmail(command.getEmail());
@@ -64,3 +65,4 @@ public class ClienteCommandHandler {
     }
 }
 }
+

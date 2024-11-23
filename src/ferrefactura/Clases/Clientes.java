@@ -11,12 +11,12 @@ package ferrefactura.Clases;
 public class Clientes extends Usuarios{
     protected String ProductoComprado;
     protected String FormaDePago;
-    protected double Pago;
+    protected int Pago;
 
     public Clientes() {
     }
 
-    public Clientes(String ProductoComprado, String FormaDePago, double Pago, String Nombre, int ID, String Dirrecion, String Email, int Numero, String Contraseña) {
+    public Clientes(String ProductoComprado, String FormaDePago, int Pago, String Nombre, String ID, String Dirrecion, String Email, String Numero, String Contraseña) {
         super(Nombre, ID, Dirrecion, Email, Numero, Contraseña);
         this.ProductoComprado = ProductoComprado;
         this.FormaDePago = FormaDePago;
@@ -39,7 +39,7 @@ public class Clientes extends Usuarios{
         this.FormaDePago = FormaDePago;
     }
 
-    public double getPago() {
+    public int getPago() {
         return Pago;
     }
 
@@ -55,11 +55,11 @@ public class Clientes extends Usuarios{
         this.Nombre = Nombre;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -79,11 +79,11 @@ public class Clientes extends Usuarios{
         this.Email = Email;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return Numero;
     }
 
-    public void setNumero(int Numero) {
+    public void setNumero(String Numero) {
         this.Numero = Numero;
     }
 

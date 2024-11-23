@@ -20,7 +20,7 @@ public class Trabajadores extends Usuarios{
         this.ProductosVendidos = ProductosVendidos;
     }
 
-    public Trabajadores(int Salario, String ProductosVendidos, String Nombre, int ID, String Dirrecion, String Email, int Numero, String Contraseña) {
+    public Trabajadores(int Salario, String ProductosVendidos, String Nombre, String ID, String Dirrecion, String Email, String Numero, String Contraseña) {
         super(Nombre, ID, Dirrecion, Email, Numero, Contraseña);
         this.Salario = Salario;
         this.ProductosVendidos = ProductosVendidos;

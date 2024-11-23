@@ -9,17 +9,17 @@ package ferrefactura.negocios.acciones.commands;
  * @author steve
  */
 public class UpdateClienteCommand {
-    private int id;
+    private String id;
     private String nombre;
     private String direccion;
     private String email;
-    private int numero;
+    private String numero;
     private String contrasena;
     private String productoComprado;
     private String formaDePago;
-    private double pago;
+    private int pago;
 
-    public UpdateClienteCommand(int id, String nombre, String direccion, String email, int numero, String contrasena, String productoComprado, String formaDePago, double pago) {
+    public UpdateClienteCommand(String id, String nombre, String direccion, String email, String numero, String contrasena, String productoComprado, String formaDePago, int pago) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -33,7 +33,7 @@ public class UpdateClienteCommand {
 
     // Getters...
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -49,7 +49,7 @@ public class UpdateClienteCommand {
         return email;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
@@ -65,7 +65,8 @@ public class UpdateClienteCommand {
         return formaDePago;
     }
 
-    public double getPago() {
+    public int getPago() {
         return pago;
     }
+    
 }
