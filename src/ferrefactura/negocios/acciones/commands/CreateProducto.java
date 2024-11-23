@@ -4,20 +4,22 @@
  */
 package ferrefactura.negocios.acciones.commands;
 
+import ferrefactura.Clases.Productos;
+
 /**
  *
  * @author USUARIO
  */
-public class CreateProducto{
+public class CreateProducto extends Productos{
     private String nombre;
     private int id;
     private int CantidadVentas;
     private String Descripcion;
-    private int Precio;
+    private double Precio;
     private String Calidad;
     private int CantidadAlmacen;
 
-    public CreateProducto(String nombre, int id, int CantidadVentas, String Descripcion, int Precio, String Calidad, int CantidadAlmacen) {
+    public CreateProducto(String nombre, int id, int CantidadVentas, String Descripcion, double Precio, String Calidad, int CantidadAlmacen) {
         this.nombre = nombre;
         this.id = id;
         this.CantidadVentas = CantidadVentas;
@@ -35,7 +37,7 @@ public class CreateProducto{
         return id;
     }
 
-    public int getCantidadVentas() {
+    public double getCantidadVentas() {
         return CantidadVentas;
     }
 
@@ -43,7 +45,7 @@ public class CreateProducto{
         return Descripcion;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return Precio;
     }
 

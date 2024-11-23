@@ -12,7 +12,7 @@ public class Productos {
     protected String nombre;
     protected int id;
     protected double Precio;
-    protected int CantidadVentas;
+    protected double CantidadVentas;
     protected String Descripcion;
     protected String Calidad;
     protected int CantidadAlmacen;
@@ -20,7 +20,7 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(String nombre, int id, double Precio, int CantidadVentas, String Descripcion, String Calidad, int CantidadAlmacen) {
+    public Productos(String nombre, int id, double Precio, double CantidadVentas, String Descripcion, String Calidad, int CantidadAlmacen) {
         this.nombre = nombre;
         this.id = id;
         this.Precio = Precio;
@@ -54,11 +54,11 @@ public class Productos {
         this.Precio = Precio;
     }
 
-    public int getCantidadVentas() {
+    public double getCantidadVentas() {
         return CantidadVentas;
     }
 
-    public void setCantidadVentas(int CantidadVentas) {
+    public void setCantidadVentas(double CantidadVentas) {
         this.CantidadVentas = CantidadVentas;
     }
 

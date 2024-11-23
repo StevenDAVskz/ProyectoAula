@@ -45,7 +45,7 @@ public boolean save(Productos producto) {
         insertStmt.setString(1, producto.getNombre());
         insertStmt.setInt(2, producto.getId());
         insertStmt.setDouble(3, producto.getPrecio());
-        insertStmt.setInt(4, producto.getCantidadVentas());
+        insertStmt.setDouble(4, producto.getCantidadVentas());
         insertStmt.setString(5, producto.getDescripcion());
         insertStmt.setString(6, producto.getCalidad());
         insertStmt.setInt(7, producto.getCantidadAlmacen());
