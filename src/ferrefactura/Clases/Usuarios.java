@@ -12,16 +12,16 @@ package ferrefactura.Clases;
 public class Usuarios {
     
     protected String Nombre;
-    protected String ID;
+    protected int ID;
     protected String Dirrecion;
     protected String Email;
-    protected String Numero;
+    protected int Numero;
     protected String Contraseña;
 
     public Usuarios() {
     }
 
-    public Usuarios(String Nombre, String ID, String Dirrecion, String Email, String Numero, String Contraseña) {
+    public Usuarios(String Nombre, int ID, String Dirrecion, String Email, int Numero, String Contraseña) {
         this.Nombre = Nombre;
         this.ID = ID;
         this.Dirrecion = Dirrecion;
@@ -38,11 +38,11 @@ public class Usuarios {
         this.Nombre = Nombre;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -62,11 +62,11 @@ public class Usuarios {
         this.Email = Email;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return Numero;
     }
 
-    public void setNumero(String Numero) {
+    public void setNumero(int Numero) {
         this.Numero = Numero;
     }
 

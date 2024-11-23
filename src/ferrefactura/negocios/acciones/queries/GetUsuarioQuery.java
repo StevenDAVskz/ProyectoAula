@@ -8,10 +8,10 @@ package ferrefactura.negocios.acciones.queries;
  *
  * @author steve
  */
-public class GetClienteQuery {
+public class GetUsuarioQuery {
     private String id;
 
-    public GetClienteQuery(String id) {
+    public GetUsuarioQuery(String id) {
         this.id = id;
     }
 

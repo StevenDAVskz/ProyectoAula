@@ -13,13 +13,12 @@ public class CreateClienteCommand {
     private int id;
     private String direccion;
     private String email;
-    private int numero;  // Cambiado de String a int
+    private int numero;
     private String contrasena;
     private String productoComprado;
     private String formaDePago;
-    private double pago;  // Este puede ser un double para representar la cantidad de dinero
+    private double pago;
 
-    // Constructor con los parámetros correctos
     public CreateClienteCommand(String nombre, int id, String direccion, String email, int numero, String contrasena, String productoComprado, String formaDePago, double pago) {
         this.nombre = nombre;
         this.id = id;
@@ -32,13 +31,11 @@ public class CreateClienteCommand {
         this.pago = pago;
     }
 
-    // Métodos getters para acceder a los valores de los atributos
-
     public String getNombre() {
         return nombre;
     }
 
-    public int getId() {  // Cambiado a int
+    public int getId() {
         return id;
     }
 
@@ -50,7 +47,7 @@ public class CreateClienteCommand {
         return email;
     }
 
-    public int getNumero() {  // Cambiado a int
+    public int getNumero() {
         return numero;
     }
 
@@ -66,11 +63,11 @@ public class CreateClienteCommand {
         return formaDePago;
     }
 
-    public double getPago() {  // Cambiado a double
+    public double getPago() {
         return pago;
     }
+    
 }
-
 
 // Comando para actualizar un cliente
 
