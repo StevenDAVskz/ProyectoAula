@@ -25,7 +25,7 @@ public class ClienteCommandHandler {
         Usuarios cliente;
        cliente = new Usuarios(
                 command.getNombre(),
-                command.getId(),
+                command.getID(),
                 command.getDireccion(),
                 command.getEmail(),
                 command.getNumero(),
@@ -38,7 +38,7 @@ public class ClienteCommandHandler {
     }
     
     public void handle(UpdateClienteCommand command) {
-        Clientes cliente = clienteRepository.findById(command.getId());
+        Clientes cliente = clienteRepository.findById(command.getID());
         if (cliente != null) {
             // Actualiza los atributos del cliente
             cliente.setNombre(command.getNombre());

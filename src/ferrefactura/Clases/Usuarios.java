@@ -72,7 +72,7 @@ public class Usuarios {
         this.Numero = Numero;
     }
 
-    public String getContraseña() {
+    public String getContrasena() {
         return Contraseña;
     }
 
